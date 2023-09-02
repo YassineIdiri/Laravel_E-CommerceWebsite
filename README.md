@@ -12,7 +12,7 @@ Test it : https://shopsynergy.000webhostapp.com
 </div>
 
 
-# Ecommerce
+# E-commerce
 
 An e-commerce website built with the Laravel framework.
 
