@@ -3,6 +3,9 @@
 
 Test it : https://shopsynergy.000webhostapp.com
 
+
+
+
 ![3](https://github.com/YassineProDev/Laravel_E-CommerceWebsite/assets/120946916/101cbd7e-c921-4a39-9512-3018cea381f4)
 
 
@@ -11,8 +14,7 @@ Test it : https://shopsynergy.000webhostapp.com
 
 # Ecommerce
 
-An e-commerce website utilizing the Laravel framework.
-
+An e-commerce website built with the Laravel framework.
 
 # Installation
 
