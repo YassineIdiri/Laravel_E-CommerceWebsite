@@ -1,0 +1,326 @@
+.info
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.annonces
+{
+  margin-top : 20px;
+  width : 45%;
+  height : 50%;
+  background: #f5f5f5;
+  border : solid 2px white;
+  border-radius : 10px;
+  padding : 15px;
+  overflow: auto;
+  
+}
+
+.commentaires
+{
+  margin-top : 20px;
+  width : 45%;
+  height : 50%;
+  background: #f5f5f5;
+  border : solid 2px white;
+  border-radius : 10px;
+  padding : 15px;
+  overflow: auto;
+  
+}
+.profil
+{
+    margin-top : 20px;
+    width : 100%;
+    background: #e6e4e4;
+    border-radius : 10px;
+    padding : 15px;
+    overflow: auto;
+    position: relative;
+}
+.profil::before
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Adjust this value to control the height of the colored top part */
+  background-image: linear-gradient(to bottom, #dddfdb, #b8bebb);
+  z-index: 3;
+}
+
+.right
+{
+  height : 100%;
+  display :flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.option
+{
+  background-color: #dcdcdc;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left : 2px;
+  height : 30px;
+  width : 35px;
+}
+
+.report-button {
+  background-color: #FF0000; /* Couleur de fond du bouton */
+  color: #FFFFFF; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure du bouton */
+  height : 25px;
+  padding: 2px 6px;
+  border-radius: 5px; /* Arrondi des coins du bouton */
+  cursor: pointer; /* Curseur en main au survol du bouton */
+}
+
+.report-button:hover {
+  background-color: #CC0000; /* Couleur de fond du bouton au survol */
+}
+
+.setting-button {
+  background-color: #7a7c7a; /* Couleur de fond du bouton */
+  color: #FFFFFF; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure du bouton */
+  height : 25px;
+  padding: 2px 6px;
+  border-radius: 5px; /* Arrondi des coins du bouton */
+  cursor: pointer; /* Curseur en main au survol du bouton */
+  margin-right : 4px;
+}
+
+.setting-button:hover {
+  background-color: #525252; /* Couleur de fond du bouton au survol */
+}
+
+.orders-button {
+  background-color: #7a7c7a; /* Couleur de fond du bouton */
+  color: #FFFFFF; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure du bouton */
+  height : 25px;
+  padding: 2px 6px;
+  border-radius: 5px; /* Arrondi des coins du bouton */
+  cursor: pointer; /* Curseur en main au survol du bouton */
+}
+
+.orders-button:hover {
+  background-color: #525252; /* Couleur de fond du bouton au survol */
+}
+
+.btn
+{
+   height : 100px;
+   padding-top : 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+}
+
+.disable
+{
+   display: none;
+}
+
+.activeC
+{
+   display: block !important;
+}
+
+
+
+.profil h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .profil hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+
+  .profile-info h3 {
+    margin-bottom: 10px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-info h1 {
+    margin-bottom: 20px;
+    color: #34495e;
+    text-align: center;
+  }
+
+  .haut
+  {
+    width : 100%;
+     display : flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 30px;
+  }
+
+  .bas
+  {
+     margin-top : 30px;
+     width : 100%;
+     display : flex;
+     justify-content: space-between;
+  }
+
+  .bi.bi-star-fill {
+    color: #de7921; /* Couleur jaune pour l'icône d'étoile remplie */
+}
+
+.bi.bi-star {
+    color: #de7921; /* Couleur jaune pour l'icône d'étoile remplie */
+}
+.bi.bi-star-half
+{
+    color: #de7921;
+}
+
+.bi.bi-heart
+{
+    color: red;
+    margin-left : 4px;
+}
+
+.bi.bi-heart-fill
+{
+    color: red;
+}
+
+.commentBox
+{
+    margin-top: 2rem;
+}
+
+.cart-product-title h4
+{
+  color :#696969;
+}
+
+.info-user
+{
+  margin-top : 83px;
+  width : 100%;
+  padding-left : 15%;
+  padding-right : 15%;
+
+}
+
+.profil h4
+{
+    margin-top: 5px;
+    color : grey !important;
+}
+
+h3
+{
+    color: #424144;
+    font-family: "Jost", sans-serif;
+    margin-bottom: 15px;
+}
+
+p 
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right : 27px;
+    width : 90%;
+}
+
+.article
+{
+    color : rgb(37, 150, 190) !important;
+    text-decoration: none;
+}
+
+.article
+{
+    color : rgb(87, 132, 148) !important;
+}
+
+.msgp
+{
+    display: flex;
+    align-items: center;
+}
+
+.like
+{
+  border : solid 1px #dcdcdc;
+  display: flex;
+  border-radius : 8px;
+  padding : 3px 4px;
+  background-color: #dcdcdc;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 170px; /* Adjust the size of the circle */
+  height: 170px;
+  border-radius: 100%; /* This creates the circular shape */
+  background-color: #a9b7b8; /* Set the background color of the circle */
+  margin-right: 20px; /* Adjust the spacing between the circle and the profile info */
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  z-index: 4;
+  border: solid 4px #e6e4e4;;
+}
+.profile-avatar h1
+{
+  color : #e9edee;
+}
+
+.avatar
+{
+  display : flex;
+  align-items: center;
+}
+
+@media(max-width : 800px){
+  .info
+  {
+    flex-direction: column !important;
+    width : 100%;
+  }
+  .commentaires
+  {
+    width : 100%;
+  }
+  .annonces
+  {
+    width : 100%;
+  }
+
+  .info-user
+  {
+
+  padding-left : 5%;
+  padding-right : 5%;
+ }
+}
+
+
+@media(max-width : 500px){
+
+.haut h3
+{
+  display: flex;
+  flex-direction: column;
+}
+
+}

@@ -1,0 +1,168 @@
+.info-user
+{
+  margin-top : 83px;
+  height : 83vh;
+  width : 100%;
+  display : flex;
+  justify-content: center;
+  padding-left : 5%;
+  padding-right : 5%;
+
+}
+
+.info
+{
+  margin-top : 13px;
+  width : 55%;
+  height : 102%;
+  background: #f5f5f5;
+  border : solid 2px white;
+  border-radius : 10px;
+  display: flex;
+  flex-direction: column;
+  padding : 15px;
+  overflow: auto;
+}
+
+h3
+{
+  width : 100%;
+  font-size: calc(1.2rem + .4vw);
+  font-family: "Jost", sans-serif;
+  color: #444143;
+  font-weight: 500;
+}
+hr {
+  border: 0;
+  border-top: 1px solid black;
+  color: inherit;
+  opacity: .25;
+  width : 100%;
+}
+
+
+@media (max-width : 1000px)
+{
+  .info-user
+  {
+    display : block;
+    padding : 5%;
+  }
+  .info
+  {
+    width : 100%;
+    margin-top : 10px;
+  }
+
+  .annonces
+  {
+    width : 100%;
+    margin-top : 20px;
+    margin-bottom : 10px;
+  }
+
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.container-btn {
+  margin-top : 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn
+{
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #C0C0C0;
+  border-radius: 4px;
+  color: #525f7f;
+  box-shadow: 0 1px 3px rgba(50,50,93,.15),0 1px 0 rgba(0,0,0,.02);
+  border: 1px solid #ced4da;
+  padding: 4px 8px;
+}
+
+.btn:hover {
+  background-color: #ebebeb;
+}
+
+
+.form-label
+{
+  color: #424144;
+  margin-top : 10px;
+  margin-bottom : 10px;
+}
+
+
+input[type="text"]:focus {
+  border-color: rgba(50,151,211,.25);
+}
+
+.btn-edit
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  border-radius: 2rem;
+  background: rgb(0,110,147);
+  color: white;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.container-edit {
+  display: flex;
+  justify-content: center;
+
+}
+
+.cart-product-title h4
+{
+  color :#696969;
+}
+
+abbr {
+  border: 0;
+  color: red;
+  padding: 0 .3em 0 0;
+  text-decoration: none;
+}
+
+.error
+{
+  color: red;
+  font-size: 0.75rem;
+  font-family: "Lato", Arial, sans-serif !important;
+}
+
+.btn-reset {
+  background-color: rgb(147, 0, 0);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  font-style: italic;
+  margin-left : 10px; 
+  display: block;
+  border-radius: 2rem;
+}
+
+.btn-reset:hover {
+  background-color: white;
+  color : red;
+}
