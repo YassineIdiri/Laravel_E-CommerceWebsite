@@ -7,9 +7,12 @@ Test it : https://shopsynergy.000webhostapp.com
 
 </div>
 
+
 # Ecommerce
 
+
 An e-commerce website utilizing the Laravel framework.
+
 
 # Installation
 
