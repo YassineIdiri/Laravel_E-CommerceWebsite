@@ -2,8 +2,10 @@
 <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
 
 Test it : https://shopsynergy.000webhostapp.com
-</div>
 
+![2](https://github.com/YassineProDev/Laravel_E-CommerceWebsite/assets/120946916/d34c6783-4563-4a08-872f-b72fa24aaa6d)
+
+</div>
 # Ecommerce
 
 An e-commerce website utilizing the Laravel framework.
