@@ -3,8 +3,8 @@
 
 Test it : https://shopsynergy.000webhostapp.com
 
+![3](https://github.com/YassineProDev/Laravel_E-CommerceWebsite/assets/120946916/101cbd7e-c921-4a39-9512-3018cea381f4)
 
-![2](https://github.com/YassineProDev/Laravel_E-CommerceWebsite/assets/120946916/d34c6783-4563-4a08-872f-b72fa24aaa6d)
 
 </div>
 
