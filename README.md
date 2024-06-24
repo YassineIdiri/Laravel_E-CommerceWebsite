@@ -14,7 +14,7 @@ Test it : https://shopsynergy.000webhostapp.com
 
 # E-commerce
 
-An e-commerce website built with the Laravel framework.
+An E-Commerce website built with the Laravel framework.
 
 # Installation
 
