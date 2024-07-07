@@ -1,5 +1,8 @@
 <div align="center">
-<a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
+
+![Repo Size](https://img.shields.io/github/repo-size/YassineIdiri/Laravel_E-CommerceWebsite.svg)
+![Commits](https://img.shields.io/github/commit-activity/m/YassineIdiri/Laravel_E-CommerceWebsite.svg)
+![Languages](https://img.shields.io/github/languages/top/YassineIdiri/Laravel_E-CommerceWebsite.svg)
 
 Test it : https://shopsynergy.000webhostapp.com
 </div>
@@ -23,10 +26,12 @@ https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/f513b
 
 ### 💳 Payment with Stripe
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/80eb9cdd-b232-4a41-8f5e-ca8fd9662f17
+https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/14f5b3ae-1a5f-4914-89e5-923eb971f284
 
-### 🖨️PDF generation for orders
 
+### 🖨️ PDF Generation for Orders and Automated Mailing
+
+https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/433578e1-45f3-45bb-ad52-3160ac149a78
 
 ### 📥 Item upload 
 
