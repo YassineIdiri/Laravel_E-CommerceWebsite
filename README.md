@@ -4,7 +4,6 @@
 ![Commits](https://img.shields.io/github/commit-activity/m/YassineIdiri/Laravel_E-CommerceWebsite.svg)
 ![Languages](https://img.shields.io/github/languages/top/YassineIdiri/Laravel_E-CommerceWebsite.svg)
 
-Test it : https://shopsynergy.000webhostapp.com
 </div>
 
 ### 📄 Item details and reviews
