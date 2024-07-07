@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Récapitulatif de votre commande</title>
+    <title>Summary of your order</title>
     <style>
         body { font-size: 15px; color: rgba(0,0,0,.4); }
         h2 { font-size: 24px; font-weight: 400; }
@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td style="padding: 2em 0;">
-                    <h2>{{$name}}, voivi le récapitulatif de votre commande</h2>
+                    <h2>{{$name}}, here is the summary of your order</h2>
                     <hr>
                 </td>
             </tr>

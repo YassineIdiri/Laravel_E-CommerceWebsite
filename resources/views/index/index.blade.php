@@ -28,7 +28,7 @@
   </div>
 
   <div class = "recommendation" >
-  <h2 class='h2'>Recommended for You</h2>
+  <h2 class='h2'>Recommended</h2>
     <div class = 'products'>
       @foreach ($recommande as $article)
           <div class = 'card'>
@@ -84,7 +84,10 @@
     </div>
   </div>
 
-
+  
+  @if (session('signupActivate'))
+  <script>new swal({ title: 'Un mail vous a été envoyé afin dactiver votre compte', });</script>
+  @endif
   @if (session('articleDelete'))
   <script>new swal({ title: 'L\'article a été supprimé.', });</script>
   @endif

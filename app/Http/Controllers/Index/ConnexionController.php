@@ -13,9 +13,42 @@ use App\Http\Requests\SignupRequest;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Order\CartController;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class ConnexionController extends Controller
 {    
+    public function mailTo($email, $ref)
+    {
+        $mail = new PHPMailer(true);
+
+        try{
+            $mail->SMTPDebug = 0;
+            $mail->isSMTP();
+            $mail->Host = env('MAIL_HOST');
+            $mail->SMTPAuth =true;
+            $mail->Username = env('MAIL_USERNAME');
+            $mail->Password = env('MAIL_PASSWORD');
+            $mail->SMTPSecure = env('MAIL_ENCRYPTION');
+            $mail->Port = env('MAIL_PORT');
+
+            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            $mail->addAddress($email);
+            $mail->isHTML(true);
+            $mail->Subject  = "Activate your account";
+            $mail->Body = "Here is the link to activate your account: <a href = 'http://127.0.0.1/activate/" . $ref . "'> Activate your account</a>";
+           
+            
+            $mail->send();
+        }
+        catch(Exception $e)
+        {
+            return back()->with('error','Email not send');
+ 
+        }
+
+    }
+
     /**
      * login
      *
@@ -119,10 +152,10 @@ class ConnexionController extends Controller
         $user->ref = $ref;
         $user->save();
 
-        Mail::to($user->email)->send(new ActivateAccountMail($user->name,$user->ref));
+        $this->mailTo($user->email,$user->ref);
 
-        return redirect()->route('login')->with('signupActivate', 'Your article was');
-    }   
+        return redirect()->route('index')->with('signupActivate', 'Your article was');
+    } 
 
     public function signupActivate($ref)
     {

@@ -8,12 +8,10 @@ use App\Models\Order;
 use App\Models\Article;
 use App\Models\ArticleUser;
 use App\Models\TemporyOrder;
-use Illuminate\Http\Request;
-use App\Mail\OrderConfirmMail;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Order\CartController;
@@ -97,6 +95,38 @@ class CheckoutController extends Controller
 
             return $pdfPath;
     }
+
+
+    public function mailTo($name,$email,$ref,$pdfPath)
+    {
+        $mail = new PHPMailer(true);
+
+        try{
+            $mail->SMTPDebug = 0;
+            $mail->isSMTP();
+            $mail->Host = env('MAIL_HOST');
+            $mail->SMTPAuth =true;
+            $mail->Username = env('MAIL_USERNAME');
+            $mail->Password = env('MAIL_PASSWORD');
+            $mail->SMTPSecure = env('MAIL_ENCRYPTION');
+            $mail->Port = env('MAIL_PORT');
+
+            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            $mail->addAddress($email);
+            $mail->isHTML(true);
+            $mail->Subject  = $name ." please find your invoice attached";
+            $mail->Body = "<a href = 'http://127.0.0.1/payment/pdf/" . $ref . "'> Download your invoice</a>";
+           
+            
+            $mail->send();
+        }
+        catch(Exception $e)
+        {
+            return back()->with('error','Email not send');
+ 
+        }
+
+    }
   
     /**
      * success
@@ -147,7 +177,7 @@ class CheckoutController extends Controller
             $name = Order::where('reference', '=', $ref)->first()->user->name;
             $mail = Order::where('reference', '=', $ref)->first()->user->email;
             $pdfPath = $this->storePDF($ref);
-            Mail::to($mail)->send(new OrderConfirmMail($name,$ref,$pdfPath));
+            $this->mailTo($name,$mail,$ref,$pdfPath);
 
             return view('payment.success');  
         }
@@ -156,6 +186,17 @@ class CheckoutController extends Controller
             return abort(403);
         }
         
+    }
+
+    public function download($filename)
+    {
+        $path = public_path('assets/Images/pdfs/' . $filename.'.pdf');
+
+        if (!file_exists($path)) {
+            return abort(404);
+        }
+
+        return response()->download($path);
     }
     
     

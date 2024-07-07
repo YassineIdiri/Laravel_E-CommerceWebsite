@@ -13,22 +13,22 @@
             
             <form  action= "{{route('search.category', $category)}}"  method="get" id="Forms">
                <div class="forms">
-                  <input type='text' name='search' class = 'search'  placeholder='Rechercher dans {{$category}}'  value="{{ $searchTerm ?? '' }}">
+                  <input type='text' name='search' class = 'search'  placeholder='Search in {{$category}}'  value="{{ $searchTerm ?? '' }}">
                   <button class="search-btn"><i class="bi bi-search"></i></button>
                </div>
                <input type="text" name = 'priceMax' class = 'priceMax' placeholder='Max price' value="{{ $priceMax ?? '' }}">
                <select name="sortBy" id="sortBy">
-                  <option value="asc" {{ isset($sortBy) && $sortBy === 'asc' ? 'selected' : '' }}>Prix Croissant</option>
-                  <option value="desc" {{ isset($sortBy) && $sortBy === 'desc' ? 'selected' : '' }}>Prix Décroissant</option>
+                  <option value="asc" {{ isset($sortBy) && $sortBy === 'asc' ? 'selected' : '' }}>Ascending Price</option>
+                  <option value="desc" {{ isset($sortBy) && $sortBy === 'desc' ? 'selected' : '' }}>Descending Price</option>
             </select>
             </form>
          </div>
          
 
       @if(isset($searchTerm))  
-      <div class='pheading'>{{ count($articles) }} articles  pour "{{ $searchTerm}}"</div>
+      <div class='pheading'>{{ count($articles) }} items  for "{{ $searchTerm}}"</div>
       @else
-      <div class='pheading'>{{ count($articles) }} articles</div>
+      <div class='pheading'>{{ count($articles) }} items</div>
       @endif
       <div class = 'products'>
    

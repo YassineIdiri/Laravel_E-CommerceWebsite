@@ -15,7 +15,7 @@
                 <th>Orders List</th>
                 <th>Date</th>
                 <th>Price</th>
-                <th>Number articles</th>
+                <th>Number of item</th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
                     @endforeach
                     <p style="background-color: #d5d2d2;"><span class='status delivered'>{{$totalPrice}} €</span></p>
                 </td>
-                <td>{{count($orderList['listArticle'])}} Articles</td>           
+                <td>{{count($orderList['listArticle'])}} Items</td>           
                 </tr>
 
                 <tr id="d{{$orderList['reference']}}" class='desactive' style="background-color:white !important;">

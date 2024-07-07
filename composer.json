@@ -15,6 +15,7 @@
         "mailjet/laravel-mailjet": "^3.0",
         "mailjet/mailjet-apiv3-php": "^1.5",
         "nyholm/psr7": "^1.8",
+        "phpmailer/phpmailer": "^6.9",
         "pusher/pusher-php-server": "^7.2",
         "railsware/mailtrap-php": "^1.7",
         "stripe/stripe-php": "^10.19",
@@ -22,7 +23,6 @@
         "symfony/mailgun-mailer": "^6.3"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.9",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",

@@ -68,7 +68,7 @@
         <hr>
         @foreach ($user->comments as $comm)
           <div class='commentBox'>
-            <a href='article/{{$comm->article->id}}#comment{{$comm->id}}' class='article'>{{$comm->article->name}}</a>
+            <a href='/article/{{$comm->article->id}}#comment{{$comm->id}}' class='article'>{{$comm->article->name}}</a>
             <h3> {{ $user->name }} 
                 @for($i=1; $i<=$comm->rating; $i++) <i class='bi bi-star-fill'></i>@endfor
                 @for($i=$comm->rating; $i<5; $i++)  <i class='bi bi-star'></i> @endfor

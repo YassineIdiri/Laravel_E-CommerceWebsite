@@ -23,9 +23,10 @@ class IndexController extends Controller
     {
 
         $recommande = Article::select('articles.id', 'articles.user_id', 'articles.name', 'articles.price', 'articles.description', 'articles.category', 'images.id as imageId', 'images.path', 'images.main')
-        -> join('images', 'images.article_id', '=', 'articles.id') 
-        -> where("main", "=", 1)
-        ->inRandomOrder() 
+        ->join('images', 'images.article_id', '=', 'articles.id')
+        ->where('images.main', '=', 1)
+        ->whereIn('articles.category', ['Vehicles', 'Informatics','Furniture'])
+        ->inRandomOrder()
         ->take(4)
         ->get();  
 
@@ -33,6 +34,7 @@ class IndexController extends Controller
 
         $categoriesWithCounts = Article::select("category", DB::raw('COUNT(*) as count'))
         ->groupBy("category")
+        ->orderBy("category", "asc")
         ->get();
 
         foreach ($categoriesWithCounts as $count) {

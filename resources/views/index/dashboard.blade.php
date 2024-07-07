@@ -12,7 +12,7 @@
 
         <div class="card">
           <div class="card-inner">
-            <p class="text-primary">PRODUCTS DAY</p>
+            <p class="text-primary">PRODUCTS</p>
             <i class='bi bi-clipboard-data text-blue'></i>
           </div>
           <span class="text-primary font-weight-bold">{{$articles}}</span>

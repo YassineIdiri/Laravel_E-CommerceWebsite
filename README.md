@@ -1,62 +1,33 @@
 <div align="center">
-    
-![Repo Size](https://img.shields.io/github/repo-size/YassineIdiri/Laravel_E-CommerceWebsite.svg)
-![Commits](https://img.shields.io/github/commit-activity/m/YassineIdiri/Laravel_E-CommerceWebsite.svg)
-![Languages](https://img.shields.io/github/languages/top/YassineIdiri/Laravel_E-CommerceWebsite.svg)
+<a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>
 
 Test it : https://shopsynergy.000webhostapp.com
+
+
+
+
+![3](https://github.com/YassineProDev/Laravel_E-CommerceWebsite/assets/120946916/101cbd7e-c921-4a39-9512-3018cea381f4)
+
+
 </div>
 
-### 📄 Item details and reviews
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/9f5d64b7-04ec-4ada-802b-51809bbf186d
+# E-commerce
 
+An E-Commerce website built with the Laravel framework.
 
-### 🛒 Homepage
+# Installation
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/dc74ee31-75a5-4361-b684-5d8af8f00f71
+- You need to install Apache, PHP Mysql and Composer.
 
-### 🔎 Search Bar
+- Clone the project : git clone https://github.com/YassineProDev/Laravel_E-CommerceWebsite
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/b0da4df9-3e46-4d6d-a0a5-ddcd4b7600d4
+- Go in the new file : cd Laravel_E-CommerceWebsite
 
-### ⚙️ Profile and Setting
+- Run this command : composer install
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/f513baab-8f29-4557-bd29-3d3ad705b460
-
-### 💳 Payment with Stripe
-
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/cf3052cf-1c2f-4f63-98d2-da3cae9e70d4
-
-### 🖨️ PDF Generation for Orders and Automated Mailing
-
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/09dd8bd8-bdaa-46ff-9861-5b925155ae44
-
-### 📥 Item upload 
-
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/14155445-98ec-4a40-9ae2-1af02c604636
-
-### 📈 Dashboard
-
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/ee0d889f-4721-4e4d-9992-2a8987c154dd
-
-
-## 🚀 Getting Started
-
-### Installation
-You need to install Apache, PHP Mysql and Composer.
-Clone the repository:
-``` bash
-git clone https://github.com/YassineIdiri/Laravel_E-CommerceWebsite.git
-cd Laravel_E-CommerceWebsite
-```
-
-Install dependencies:
-```bash
-composer install
-```
-
-- Place the file containing the project on your Apache server (the 'www' folder on Windows or 'http' folder on Linux)
 - Then, you can change the .env and put your SQL username, password, db_name host and port. Start the mariadb/mysql service and run
 
+- Then start the MySQL service and run : php artisan migrate
 
+- Place the file containing the project on your Apache server (the 'www' folder on Windows or 'http' folder on Linux)

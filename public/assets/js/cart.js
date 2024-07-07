@@ -1,1 +1,181 @@
-function disableAllButtons(){let e=document.querySelectorAll(".cart-remove");e.forEach(e=>{e.disabled=!0,setTimeout(()=>{e.disabled=!1},500)})}function add(e,t){disableAllButtons(),fetch(e,{method:"POST",headers:{"X-CSRF-TOKEN":document.querySelector('meta[name="csrf-token"]').getAttribute("content")}}).then(e=>{if(e.ok)return e.json();throw Error("La requ\xeate a \xe9chou\xe9 : "+e.status)}).then(e=>{if(e.nouvelleQuantite>1){let a=document.getElementById(t),l=a.querySelector("#quantity");l.textContent="Qt :"+e.nouvelleQuantite;let d=document.getElementById("total");d.textContent=calculerPrixTotal()+" €"}else fetch("/api/article/details/"+t).then(e=>{if(!e.ok)throw Error("The request has failed : "+e.status);return e.json()}).then(e=>{let t=document.createElement("div");t.classList.add("cart-box"),t.id=e.data.article.id;let a=document.createElement("a");a.href="#";let l=document.createElement("img");l.src="/storage/"+e.data.image_path,l.alt="",l.classList.add("cart-img"),a.appendChild(l),t.appendChild(a);let d=document.createElement("div");d.classList.add("detail-box");let r=document.createElement("div");r.classList.add("cart-product-title"),r.textContent=e.data.article.name,d.appendChild(r);let n=document.createElement("div");n.classList.add("cart-price"),n.textContent=e.data.article.price+" €",d.appendChild(n);let i=document.createElement("div");i.id="quantity",i.classList.add("cart-price"),i.textContent="Qt : 1",d.appendChild(i),t.appendChild(d);let c=document.createElement("div");c.classList.add("btns");let s=document.createElement("button");s.classList.add("cart-remove"),s.name="rm",s.onclick=()=>add("/cart/addItem/"+e.data.article.id,e.data.article.id);let o=document.createElement("i");o.classList.add("bi","bi-plus"),s.appendChild(o),c.appendChild(s);let h=document.createElement("button");h.classList.add("cart-remove"),h.name="rm",h.onclick=()=>remove("/cart/removeItem/"+e.data.article.id,e.data.article.id);let m=document.createElement("i");m.classList.add("bi","bi-dash"),h.appendChild(m),c.appendChild(h);let u=document.createElement("button");u.classList.add("cart-remove"),u.name="rm",u.onclick=()=>deleteItem("/cart/deleteItem/"+e.data.article.id,e.data.article.id);let p=document.createElement("i");p.classList.add("bi","bi-trash3"),u.appendChild(p),c.appendChild(u),t.appendChild(c);let E=document.querySelector(".cart-content");E.appendChild(t);let C=document.getElementById("total");C.textContent=calculerPrixTotal()+" €",new swal({title:"The article has been added to the cart."})}).catch(e=>{console.error("The request has failed :",e)})}).catch(e=>{console.error("The request has failed :",e)})}function remove(e,t){disableAllButtons(),fetch(e,{method:"DELETE",headers:{"X-CSRF-TOKEN":document.querySelector('meta[name="csrf-token"]').getAttribute("content")}}).then(e=>{e.ok?e.json().then(e=>{let a=document.getElementById(t),l=a.querySelector("#quantity");l.textContent="Qt :"+e.nouvelleQuantite;let d=document.getElementById("total");d.textContent=calculerPrixTotal()+" €"}):console.error("The request has failed :",e.status)}).catch(e=>{console.error("The request has failed :",e)})}function deleteItem(e,t){disableAllButtons(),fetch(e,{method:"DELETE",headers:{"X-CSRF-TOKEN":document.querySelector('meta[name="csrf-token"]').getAttribute("content")}}).then(e=>{if(e.ok){document.getElementById(t).remove();let a=document.getElementById("total");a.textContent=calculerPrixTotal()+" €"}else console.error("The request has failed :",e.status)}).catch(e=>{console.error("The request has failed :",e)})}
+function disableAllButtons() {
+    const buttons = document.querySelectorAll('.cart-remove');
+    buttons.forEach(button => {
+        button.disabled = true;
+        setTimeout(() => {
+            button.disabled = false;
+        }, 500);
+    });
+}
+
+function add(url, id) {
+    disableAllButtons();
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    })
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Error: " + response.status);
+        }
+    })
+    .then((data) => {
+        if (data.nouvelleQuantite > 1) {
+            const elem = document.getElementById(id);
+            const qt = elem.querySelector('#quantity');
+            qt.textContent = "Qt :" + data.nouvelleQuantite;
+
+            const tot = document.getElementById("total");
+            tot.textContent = calculerPrixTotal() + " €";
+        } else {
+            fetch('/api/article/details/' + id)
+            .then((articleResponse) => {
+                if (!articleResponse.ok) {
+                    throw new Error("Error : " + articleResponse.status);
+                }
+                return articleResponse.json();
+            })
+            .then((articleData) => {
+
+                const cartBox = document.createElement("div");
+                cartBox.classList.add("cart-box");
+                cartBox.id = articleData.data.article.id;
+
+                const imgLink = document.createElement("a");
+                imgLink.href = "#";
+                const cartImg = document.createElement("img");
+                cartImg.src = "/assets/Images/" + articleData.data.image_path;
+                cartImg.alt = "";
+                cartImg.classList.add("cart-img");
+                imgLink.appendChild(cartImg);
+                cartBox.appendChild(imgLink);
+
+                const detailBox = document.createElement("div");
+                detailBox.classList.add("detail-box");
+
+                const cartProductTitle = document.createElement("div");
+                cartProductTitle.classList.add("cart-product-title");
+                cartProductTitle.textContent = articleData.data.article.name;
+                detailBox.appendChild(cartProductTitle);
+
+                const cartPrice = document.createElement("div");
+                cartPrice.classList.add("cart-price");
+                cartPrice.textContent = articleData.data.article.price + " €";
+                detailBox.appendChild(cartPrice);
+
+                const cartQuantity = document.createElement("div");
+                cartQuantity.id = "quantity";
+                cartQuantity.classList.add("cart-price");
+                cartQuantity.textContent = "Qt : 1";
+                detailBox.appendChild(cartQuantity);
+
+                cartBox.appendChild(detailBox);
+
+                const btns = document.createElement("div");
+                btns.classList.add("btns");
+
+                const plusButton = document.createElement("button");
+                plusButton.classList.add("cart-remove");
+                plusButton.name = "rm";
+                plusButton.onclick = () => add('/cart/addItem/'+articleData.data.article.id, articleData.data.article.id);
+                const plusIcon = document.createElement("i");
+                plusIcon.classList.add("bi", "bi-plus");
+                plusButton.appendChild(plusIcon);
+                btns.appendChild(plusButton);
+
+                const dashButton = document.createElement("button");
+                dashButton.classList.add("cart-remove");
+                dashButton.name = "rm";
+                dashButton.onclick = () => remove('/cart/removeItem/'+articleData.data.article.id,  articleData.data.article.id);
+                const dashIcon = document.createElement("i");
+                dashIcon.classList.add("bi", "bi-dash");
+                dashButton.appendChild(dashIcon);
+                btns.appendChild(dashButton);
+
+                const trashButton = document.createElement("button");
+                trashButton.classList.add("cart-remove");
+                trashButton.name = "rm";
+                trashButton.onclick = () => deleteItem('/cart/deleteItem/'+articleData.data.article.id, articleData.data.article.id);
+                const trashIcon = document.createElement("i");
+                trashIcon.classList.add("bi", "bi-trash3");
+                trashButton.appendChild(trashIcon);
+                btns.appendChild(trashButton);
+
+                cartBox.appendChild(btns);
+
+                const cartContent = document.querySelector('.cart-content');
+                cartContent.appendChild(cartBox);
+
+                const tot = document.getElementById("total");
+                tot.textContent = calculerPrixTotal() + " €";
+
+                new swal({ title: 'The item has been added to the cart', });
+                
+            })
+            .catch((error) => {
+                console.error("Error :", error);
+            });
+        }
+    })
+    .catch((error) => {
+        console.error("Error :", error);
+    });
+}
+
+
+function remove(url,id)
+{
+    disableAllButtons();
+
+    fetch(url, {
+        method: "DELETE",
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    }).then((response) => {
+        if (response.ok) {
+            response.json().then((data) => {
+                const elem = document.getElementById(id);
+
+                const qt = elem.querySelector('#quantity');
+                qt.textContent = "Qt :" + data.nouvelleQuantite;
+            
+                const tot = document.getElementById("total"); 
+                tot.textContent = calculerPrixTotal() + " €";
+            });
+        } else {
+            console.error("The request failed :", response.status);
+        }
+    }).catch((error) => {
+        console.error("Error during request :", error);
+    });
+}
+
+function deleteItem(url,id)
+{
+    disableAllButtons();
+
+    fetch(url, {
+        method: "DELETE",
+        headers: {
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
+    }).then((response) => {
+        if (response.ok) {
+            document.getElementById(id).remove();
+            const tot = document.getElementById("total"); 
+            tot.textContent = calculerPrixTotal() + " €";
+        } else {
+            console.error("Error :", response.status);
+        }
+    }).catch((error) => {
+        console.error("Error :", error);
+    });
+}
+
+

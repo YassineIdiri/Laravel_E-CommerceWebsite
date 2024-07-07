@@ -43,7 +43,7 @@
             <input type='password' class='form-control' id='email' name='ActualPassword' placeholder = 'Enter your current password to edit' >
             <div class="container-edit">
             <button name = 'submitEdit' class='btn-edit'>Edit</button>
-            <button type="submit" class="btn btn-reset" name="supprimer" data-user-id="{{ session('user') }}" onclick="return confirmDelete(event)">Supprimer</button>
+            <button type="submit" class="btn btn-reset" name="supprimer" data-user-id="{{ session('user') }}" onclick="return confirmDelete(event)">Delete account</button>
             </div>
         </form>
 
@@ -51,7 +51,7 @@
         <script src="/assets/js/setting.js"></script>
 
         @if (session('edit'))
-            <script>new swal({ title: 'Votre profil a été mis à jour', });</script>
+            <script>new swal({ title: 'Your profile has been updated.', });</script>
         @endif
 
 @endsection

@@ -130,6 +130,8 @@ Route::prefix('/payment') -> controller(CheckoutController::class) ->  name("pay
     Route::post('/create-checkout-session', 'checkout')->name('.checkout')-> middleware(IsLogged::class);
     Route::get('/success',  'success')->name('.successPayment')-> middleware(IsLogged::class);
     Route::get('/cancel',  'cancel')->name('.cancelPayment')-> middleware(IsLogged::class);
+    Route::get('/pdf/{filename}','download')->name('download.pdf');
+
 });
 
 Route::prefix('/search') -> controller(SearchController::class) ->  name("search") -> group(function () {

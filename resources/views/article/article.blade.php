@@ -52,8 +52,8 @@
                       </div>
                     </div>
                 
-                    <div class="swiper-button-next swiper-navBtn" style="background: #eee;color: black !important;"></div>
-                    <div class="swiper-button-prev swiper-navBtn" style="background: #eee;color: black !important;"></div>
+                    <div class="swiper-button-next swiper-navBtn" style="color: black !important;"></div>
+                    <div class="swiper-button-prev swiper-navBtn" style="color: black !important;"></div>
                     <div class="swiper-pagination"></div>
                 
                   </div>
@@ -81,43 +81,7 @@
                 </div>
                 </div>
     
-                <div class='table' data-aos="fade-right"  data-aos-duration="1500">
-                  <h2>Product Information</h2>
-                  <table>
-                      <tr>
-                          <th>Seller</th>
-                          <td>@if(session()->has('user') && session('user') != $article->user->id) <a href ='/user/profil/{{$article->user->name}}'>{{$article->user->name}}</a> @else {{$article->user->name}} @endif</td>
-                      </tr>
-                      <tr>
-                          <th>Category</th>
-                          <td>{{$article->category}}</td>
-                      </tr>
-                      <tr>
-                          <th>Reviews</th>
-                          <td>@if($commentCount == 0)
-                                  No comments
-                              @elseif($commentCount == 1)
-                                      {{floor($averageRating)}}
-                                      @for($i=1; $i<=$averageRating; $i++) <i class="bi bi-star-fill"></i>@endfor
-                                      @for($i=$averageRating; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
-                                      &nbsp; 1 comment
-                              @else
-                                     @if($averageRating == floor($averageRating))
-                                        {{floor($averageRating)}}
-                                        @for($i=1; $i<=$averageRating; $i++) <i class="bi bi-star-fill"></i>@endfor
-                                        @for($i=$averageRating; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
-                                     @else
-                                        {{$averageRating}}
-                                        @for($i=1; $i<=floor($averageRating); $i++) <i class="bi bi-star-fill"></i>@endfor
-                                        <i class="bi bi-star-half"></i>
-                                        @for($i=floor($averageRating)+1; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
-                                     @endif
-                                      &nbsp; {{ $commentCount }} comments
-                              @endif</td>
-                      </tr>
-                  </table>
-              </div>
-
+               
             <div class = 'commentaires' data-aos="fade-right" data-aos-duration="1800"> 
              <h2>Comments</h2>
              <div class ='commentaire' >
@@ -191,21 +155,61 @@
             @endforeach
               </div>
             </div>
+
+
+            <div class='table' data-aos="fade-right"  data-aos-duration="1500">
+              <h2>Product Information</h2>
+              <table>
+                  <tr>
+                      <th>Seller</th>
+                      <td>@if(session()->has('user') && session('user') != $article->user->id) <a href ='/user/profil/{{$article->user->name}}'>{{$article->user->name}}</a> @else {{$article->user->name}} @endif</td>
+                  </tr>
+                  <tr>
+                      <th>Category</th>
+                      <td>{{$article->category}}</td>
+                  </tr>
+                  <tr>
+                      <th>Reviews</th>
+                      <td>@if($commentCount == 0)
+                              No comments
+                          @elseif($commentCount == 1)
+                                  {{floor($averageRating)}}
+                                  @for($i=1; $i<=$averageRating; $i++) <i class="bi bi-star-fill"></i>@endfor
+                                  @for($i=$averageRating; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
+                                  &nbsp; 1 comment
+                          @else
+                                 @if($averageRating == floor($averageRating))
+                                    {{floor($averageRating)}}
+                                    @for($i=1; $i<=$averageRating; $i++) <i class="bi bi-star-fill"></i>@endfor
+                                    @for($i=$averageRating; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
+                                 @else
+                                    {{$averageRating}}
+                                    @for($i=1; $i<=floor($averageRating); $i++) <i class="bi bi-star-fill"></i>@endfor
+                                    <i class="bi bi-star-half"></i>
+                                    @for($i=floor($averageRating)+1; $i<5; $i++)  <i class="bi bi-star"></i> @endfor
+                                 @endif
+                                  &nbsp; {{ $commentCount }} comments
+                          @endif</td>
+                  </tr>
+              </table>
+          </div>
+
+          
             </div>
 
             <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
             <script src="/assets/js/index.js"></script>
 
             @if (session('editArticle'))
-              <script>new swal({ title: 'Votre article a été modifié', });</script>
+              <script>new swal({ title: 'Your item has been modified', });</script>
             @endif
 
             @if (session('addComment'))
-              <script>new swal({ title: 'Votre commentaire a été ajouté', });</script>
+              <script>new swal({ title: 'Your comment has been added', });</script>
             @endif 
 
             @if (session('articleSell'))
-            <script>new swal({ title: 'Votre article a été posté', });</script>
+            <script>new swal({ title: 'Your item has been posted', });</script>
          @endif
 
         
