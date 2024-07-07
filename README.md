@@ -26,10 +26,11 @@ https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/f513b
 
 ### 💳 Payment with Stripe
 
-https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/80eb9cdd-b232-4a41-8f5e-ca8fd9662f17
+https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/cf3052cf-1c2f-4f63-98d2-da3cae9e70d4
 
-### 🖨️PDF generation for orders
+### 🖨️ PDF Generation for Orders and Automated Mailing
 
+https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/09dd8bd8-bdaa-46ff-9861-5b925155ae44
 
 ### 📥 Item upload 
 
