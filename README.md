@@ -25,6 +25,9 @@ https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/f513b
 
 https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/80eb9cdd-b232-4a41-8f5e-ca8fd9662f17
 
+### 🖨️PDF generation for orders
+
+
 ### 📥 Item upload 
 
 https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/14155445-98ec-4a40-9ae2-1af02c604636
