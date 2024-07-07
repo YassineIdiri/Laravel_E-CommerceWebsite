@@ -8,6 +8,11 @@ Test it : https://shopsynergy.000webhostapp.com
 
 https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/9f5d64b7-04ec-4ada-802b-51809bbf186d
 
+
+### 🛒 Homepage
+
+https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/dc74ee31-75a5-4361-b684-5d8af8f00f71
+
 ### 🔎 Search Bar
 
 https://github.com/YassineIdiri/Laravel_E-CommerceWebsite/assets/120946916/b0da4df9-3e46-4d6d-a0a5-ddcd4b7600d4
