@@ -1,4 +1,16 @@
 <div align="center">
+  
+  # ECommerce
+</div>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=laravel,js" />
+  </a>
+</p>
+
+
+<div align="center">
 
 ![Repo Size](https://img.shields.io/github/repo-size/YassineIdiri/Laravel_E-CommerceWebsite.svg)
 ![Commits](https://img.shields.io/github/commit-activity/m/YassineIdiri/Laravel_E-CommerceWebsite.svg)
